@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col s12 m6 l12">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <div class="row">
+          <div class="col s5">
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input name="name" type="text" class="validate" [(ngModel)]="employee.name">
+                    <label for="name">Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input name="position" type="text" class="validate" [(ngModel)]="employee.position">
+                    <label for="position">Position</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input name="office" type="text" class="validate" [(ngModel)]="employee.office">
+                    <label for="disabled">Office</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input name="salary" type="text" class="validate" [(ngModel)]="employee.salary">
+                    <label for="salary">Salary</label>
+                  </div>
+                </div>
+                <div class="row" style="text-align:center;">
+                  <a class="waves-effect waves-light btn" (click)="submit()">Submit</a>
+                  <a class="waves-effect waves-light btn" style="margin-left:50px;" (click)="resetForm()">Reset</a>
+
+                </div>
+              </form>
+
+            </div>
+          </div>
+          <div class="col s7">
+            <table class="highlight responsive-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Position</th>
+                  <th>Office</th>
+                  <th>Salary</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr *ngFor="let emp of employees">
+                  <td>{{emp.name}}</td>
+                  <td>{{emp.position}}</td>
+                  <td>{{emp.office}}</td>
+                  <td>{{emp.salary}}</td>
+                  <td><a (click)="editEmployee(emp)"><i class="material-icons">border_color</i></a></td>
+                  <td><a (click)="deleteEmployee(emp)"><i class="material-icons">delete</i></a></td>
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
